@@ -1,0 +1,22 @@
+apiVersion: apps/v1  #kubectl api-versions 可以通过这条指令去看版本信息
+kind: Deployment # 指定资源类别
+metadata: #资源的一些元数据
+  name: springboot-demo-deployment #deloyment的名称
+  labels:
+    app: springboot-demo-deployment  #标签
+spec:
+  replicas: 2 #创建pod的个数
+  selector:
+    matchLabels:
+      app: springboot-demo-deployment #满足标签为这个的时候相关的pod才能被调度到
+  template:
+    metadata:
+      labels:
+        app: springboot-demo-deployment
+    spec:
+      containers:
+        - name: springboot-boot-demo-v1
+          image: springboot-demo:1.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
