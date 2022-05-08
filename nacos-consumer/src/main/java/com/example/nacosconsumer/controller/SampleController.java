@@ -9,6 +9,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
 @RestController
 @RequestMapping("/")
 @Slf4j
@@ -32,6 +35,13 @@ public class SampleController {
 
     @RequestMapping(value = "/echo/{str}", method = RequestMethod.GET)
     public String echo(@PathVariable String str) {
+        try {
+            InetAddress addr = InetAddress.getLocalHost();
+            log.info("IP地址：" + addr.getHostAddress() + "，主机名：" + addr.getHostName());
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        }
+
         return restTemplate.getForObject("http://demo1/echo/" + str, String.class);
     }
 

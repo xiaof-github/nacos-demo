@@ -7,7 +7,7 @@ spring:
         server-addr: 192.168.49.102:8848
         namespace: 68302088-985b-4558-82c4-f9e01631d372
         username: demo
-        ip: 180.79.50.20
+        ip:
       config:
         server-addr: 192.168.49.102:8848
         file-extension: yml
