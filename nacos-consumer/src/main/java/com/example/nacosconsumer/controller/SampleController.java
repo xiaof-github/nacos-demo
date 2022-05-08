@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package com.example.nacosconsumer.controller;
 
 
 import io.swagger.annotations.ApiOperation;
@@ -8,8 +8,6 @@ import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
-
-import javax.annotation.Resource;
 
 @RestController
 @RequestMapping("/")

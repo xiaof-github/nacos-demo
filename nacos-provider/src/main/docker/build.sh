@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t springboot-demo:1.0 . 
+docker build -t nacos-provider:1.0 .

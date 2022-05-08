@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.nacosprovider;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,12 +6,11 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class DemoApplication {
+public class NacosProviderApplication {
 
 	public static void main(String[] args) {
 
-		//System.setProperty("es.set.netty.runtime.available.processors", "false");
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(NacosProviderApplication.class, args);
 
 	}
 }
